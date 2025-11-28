@@ -1,0 +1,3 @@
+    new Pengguna('103062300114', 'Muhamad Ryan Rizki', 'user123'),
+    new Pengguna('103062300112', 'Ibnu Nazar', 'pass456'),
+    new Pengguna('103062300111', 'Lionel Messi', 'peng123'),

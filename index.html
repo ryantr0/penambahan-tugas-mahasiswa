@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Aplikasi Manajemen Tugas Mahasiswa Tel-U</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <div class="main-content-wrapper"> 
+        
+        <div id="login-screen" style="display: block;">
+            <div id="header-logo">
+                <img src="Logo_Telkom_University_potrait.png" alt="Logo Telkom University"> 
+                <h1>Aplikasi Manajemen Tugas Mahasiswa</h1>
+            </div>
+            
+            <div id="login-container">
+                <h3>Login Mahasiswa</h3>
+                <form id="login-form">
+                    <input type="text" id="nim" placeholder="NIM Mahasiswa (Cth: 1301201234)" required>
+                    <input type="password" id="password" placeholder="Password" required>
+                    <button type="submit">LOGIN</button>
+                    <p id="login-message" style="color: yellow; margin-top: 10px;"></p>
+                </form>
+            </div>
+        </div>
+
+        <div id="main-app-screen" style="display: none;">
+            
+            <div id="header-logo" class="app-header">
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <img src="Logo_Telkom_University_potrait.png" alt="Logo Telkom University" style="width: 70px; height: 70px;"> 
+                    <h1>Selamat Datang, <span id="user-name-display">Mahasiswa!</span></h1>
+                </div>
+                <button id="logout-button">LOGOUT</button>
+            </div>
+            
+            <hr>
+
+            <h3>Tambah Tugas Baru</h3>
+            <form id="task-form">
+                <input type="text" id="task-name" placeholder="Nama Tugas" required>
+                <input type="text" id="task-course" placeholder="Mata Kuliah">
+                <input type="date" id="task-deadline" required>
+                
+                <select id="task-category">
+                    <option value="Pilih Kategori" disabled selected>Pilih Kategori</option>
+                    </select>
+                <button type="submit">Tambah</button>
+            </form>
+
+            <hr>
+
+            <div id="filter-container">
+                <label for="category-filter">Tampilkan Kategori:</label>
+                <select id="category-filter" onchange="taskManager.filterAndRenderTasks()">
+                    </select>
+            </div>
+
+            <h2>Daftar Tugas (<span id="task-count">0</span>)</h2>
+            <div id="task-list-container">
+                </div>
+        </div>
+        
+    </div> 
+    
+    <script src="app.js"></script>
+</body>
+</html>
