@@ -1,0 +1,415 @@
+/* --- 1. Global Styling & Warna Telkom --- */
+:root {
+    --telkom-red: #c62828;         /* Warna Merah Utama (Deep Red) */
+    --telkom-dark-red: #8b0000;    /* Merah Lebih Gelap */
+    --telkom-light-red: #ef5350;   /* Merah Lebih Terang */
+    --telkom-white: #ffffff;       /* Putih */
+    --telkom-gray: #f8f9fa;        /* Abu-abu terang untuk elemen */
+    --text-on-dark: #ffffff;      /* Warna teks untuk latar belakang gelap (PUTIH) */
+    --text-on-light: #333333;      /* Warna teks untuk latar belakang terang (HITAM) */
+}
+
+/* Mengatur box-sizing agar padding dan border tidak menambah ukuran total elemen */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background-color: var(--telkom-red); /* LATAR BELAKANG MERAH */
+    color: var(--text-on-dark); /* TEKS UTAMA PUTIH */
+    margin: 0; 
+    padding: 0;
+    display: flex; 
+    flex-direction: column;
+    align-items: center; 
+    min-height: 100vh; 
+}
+
+.main-content-wrapper {
+    max-width: 950px;
+    width: 100%;
+    padding: 20px 15px;
+    box-sizing: border-box; /* Penting untuk responsif */
+}
+
+/* --- 2. Header & Login Styling --- */
+
+/* Header Logo di Layar Login */
+#header-logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px 0;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column; /* Selalu tumpukan logo dan judul */
+}
+
+#header-logo img {
+    width: 80px; 
+    height: 80px;
+}
+
+#header-logo h1 {
+    font-size: 1.8em;
+    margin: 0;
+}
+
+#login-container {
+    background-color: var(--telkom-white);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    margin-top: 30px;
+    color: var(--text-on-light);
+    width: 100%;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#login-container h3 {
+    margin-top: 0;
+    color: var(--telkom-dark-red);
+}
+
+#login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#login-form input[type="text"],
+#login-form input[type="password"] {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 100%;
+}
+
+#login-form button[type="submit"] {
+    background-color: var(--telkom-dark-red); 
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+#login-form button[type="submit"]:hover {
+    background-color: var(--telkom-red); 
+}
+
+/* --- 3. App Header (Setelah Login) --- */
+#header-app {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+#header-app > div {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+#header-app img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+#header-app h1 {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+#logout-button {
+    background-color: var(--telkom-white);
+    color: var(--telkom-dark-red);
+    padding: 8px 15px;
+    border: 1px solid var(--telkom-dark-red);
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+#logout-button:hover {
+    background-color: var(--telkom-light-red);
+    color: var(--telkom-white);
+}
+
+/* --- 4. Form Tambah Tugas --- */
+h3 {
+    margin-top: 25px;
+    font-weight: 600;
+}
+
+#task-form {
+    background-color: var(--telkom-white);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    
+    display: flex;
+    flex-wrap: wrap; /* Memungkinkan wrap pada layar kecil */
+    gap: 15px;
+    align-items: center;
+}
+
+#task-form input,
+#task-form select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    flex: 1 1 200px; /* Fleksibel: Min 200px, selebihnya tumbuh */
+    min-width: 150px;
+    color: var(--text-on-light);
+}
+
+#task-form button[type="submit"] {
+    background-color: #4caf50; /* Hijau */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s;
+    flex-shrink: 0; /* Jangan menyusut */
+}
+
+#task-form button[type="submit"]:hover {
+    background-color: #388e3c;
+}
+
+/* --- 5. Filter Styling --- */
+#filter-container {
+    background-color: var(--telkom-white); 
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: var(--text-on-light); 
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+#category-filter {
+    padding: 10px;
+    border: 1px solid var(--telkom-red);
+    border-radius: 6px;
+    min-width: 200px;
+    flex-grow: 1;
+    color: var(--text-on-light); 
+    background-color: #fcfcfc;
+}
+
+/* --- 6. Daftar Tugas (Task List) --- */
+h2 {
+    margin-top: 30px;
+    font-size: 1.6em;
+}
+
+#task-list-container {
+    padding-bottom: 50px; /* Ruang bawah */
+}
+
+.task-item {
+    background-color: var(--telkom-white);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s;
+    color: var(--text-on-light);
+}
+
+.task-item:hover {
+    transform: translateY(-3px);
+}
+
+.task-details-wrapper {
+    flex-grow: 1;
+}
+
+.task-name {
+    font-weight: 600;
+    font-size: 1.1em;
+}
+
+.category-tag {
+    font-size: 0.9em;
+    font-style: italic;
+    color: #6c757d;
+}
+
+.task-meta {
+    font-size: 0.9em;
+    color: #6c757d;
+    margin-top: 5px;
+}
+
+.reminder {
+    font-weight: bold;
+    color: var(--telkom-red);
+    margin-left: 10px;
+}
+
+/* Status Selesai */
+.task-item.completed {
+    background-color: var(--telkom-gray); /* Abu-abu muda untuk yang selesai */
+    opacity: 0.7;
+    border-left: 5px solid #388e3c; /* Garis hijau */
+}
+
+.task-item.completed .task-name,
+.task-item.completed .task-meta {
+    text-decoration: line-through;
+}
+
+.task-actions {
+    display: flex;
+    gap: 10px;
+    flex-shrink: 0;
+    margin-left: 20px;
+}
+
+.task-item button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+/* Tombol Selesaikan/Batal Selesai */
+.task-item button:nth-child(1) { 
+    background-color: #4caf50; 
+    color: white;
+}
+
+/* Tombol Hapus */
+.task-item button:nth-child(2) { 
+    background-color: var(--telkom-red); 
+    color: white;
+}
+
+.task-item button:nth-child(1):hover {
+    background-color: #388e3c;
+}
+
+.task-item button:nth-child(2):hover {
+    background-color: var(--telkom-dark-red);
+}
+
+/* --- 7. Garis Pemisah (HR) --- */
+hr {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    margin: 20px 0;
+}
+
+
+/* ==================================================================== */
+/* --- 8. MEDIA QUERIES (DESAIN RESPONSif) --- */
+/* ==================================================================== */
+
+@media (max-width: 768px) {
+    
+    /* Mengubah ukuran font di header agar tidak terlalu besar */
+    #header-app h1 {
+        font-size: 1.3em;
+    }
+
+    /* Header: Logo & Judul Utama */
+    #header-app {
+        flex-direction: column; /* Ubah dari baris menjadi kolom */
+        align-items: flex-start;
+        padding: 10px 0;
+        gap: 10px;
+    }
+    
+    /* Tombol Logout pindah ke baris baru dan memenuhi lebar */
+    #logout-button {
+        width: 100%; 
+        margin-top: 5px; 
+    }
+
+    /* Form Tambah Tugas */
+    #task-form {
+        flex-direction: column; /* Semua input dan select menjadi tumpukan */
+        gap: 10px; 
+        padding: 15px;
+    }
+    
+    /* Input dan Select di Form memenuhi lebar penuh */
+    #task-form input, 
+    #task-form select {
+        width: 100%;
+        min-width: 100%;
+    }
+
+    /* Tombol Tambah di Form memenuhi lebar */
+    #task-form button[type="submit"] {
+        width: 100%;
+    }
+
+    /* Filter Tugas */
+    #filter-container {
+        flex-direction: column; /* Tampilkan Kategori dan Select menjadi tumpukan */
+        align-items: flex-start;
+        gap: 10px;
+        padding: 15px;
+    }
+
+    #category-filter {
+        min-width: 100%; /* Dropdown filter memenuhi lebar */
+    }
+
+    /* Item Tugas */
+    .task-item {
+        flex-direction: column; /* Aksi dan detail tugas menjadi tumpukan */
+        align-items: stretch; /* Agar tombol aksi mengambil lebar penuh */
+        padding: 15px;
+        gap: 10px;
+    }
+    
+    /* Tombol Aksi Tugas */
+    .task-actions {
+        display: flex; /* Tombol Selesaikan/Hapus bersebelahan */
+        gap: 10px;
+        margin-left: 0; /* Hapus margin kiri */
+        margin-top: 10px;
+    }
+    
+    .task-actions button {
+        flex: 1; /* Kedua tombol membagi lebar secara merata */
+    }
+    
+    /* Rincian Tugas */
+    .task-details-wrapper p {
+        margin-bottom: 5px;
+    }
+    
+    .task-meta {
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Penyesuaian font untuk layar paling kecil */
+    #header-logo h1 {
+        font-size: 1.5em;
+    }
+}
